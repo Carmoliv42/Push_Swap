@@ -1,19 +1,23 @@
 #include "push_swap.h"
 
-char    p_swap(char *av)
+char    p_swap(int ac, char **av)
 {
-    if (!av)
+    int  i;
+
+    if(!arg_validation(ac, av))
+        return (0);   
+    i = 1;
+    while (av[i])
     {
-        printf("Vazio\n");
-        return (1);
+        printf("Argumento recebido: %s\n", av[i]);
+        i++;
     }
-    printf("Argumento recenbido: %s\n", av);
     return (0);
+
 }
 
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-    if (argc >= 2)
-        return p_swap(argv[1]);
+    p_swap(ac, av);
     return (0);
 }
