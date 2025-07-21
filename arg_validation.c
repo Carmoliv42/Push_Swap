@@ -3,7 +3,7 @@
 int arg_validation(int ac, char **av)
 {
     int  i;
-    if (ac <= 1)
+    if (ac == 1 || (ac == 2 && !av[1][0]))
     {
         printf("ERROR: Não foi passado argumento\n");
         return (0);

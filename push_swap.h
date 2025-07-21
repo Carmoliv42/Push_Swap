@@ -3,13 +3,24 @@
 
 # include <stdio.h>
 # include <limits.h>
-# include "../libft/libft.h" 
+# include "../libft/libft.h"
+
+typedef struct s_stack
+{
+    int num;
+    struct  s_stack  *next;
+    struct  s_stack *prev;
+    struct  s_stack *target;
+}   t_stack;
+
 
 int arg_validation(int ac, char **av);
 char    ps_isdigit(char c);
 int ps_isinteger( const char *av);
 int check_min_max (const char *av);
 int ps_duplicate (int ac, char **av);
+t_stack *ps_lstnew(int content);
+void    ps_lst_append(t_stack **lst, t_stack *new);
 
 
 #endif
