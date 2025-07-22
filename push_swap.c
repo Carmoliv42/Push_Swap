@@ -1,11 +1,12 @@
 #include "push_swap.h"
 
-char    push_swap(int ac, char **av)
+int    push_swap(int ac, char **av)
 {
     int  i;
     int value;
     t_stack *stack_a;
     t_stack *new_nod;
+    t_stack *temp;
 
     if(!arg_validation(ac, av))
         return (0);
@@ -18,6 +19,14 @@ char    push_swap(int ac, char **av)
         ps_lst_append(&stack_a, new_nod);
         i++;
     }
+    temp = stack_a;
+    printf("Values in list: ");
+    while(temp)
+    {
+        printf(" %d", temp->content);
+        temp = temp->next;
+    }
+    printf("\n");
     i = 1;
     while (av[i])
     {
