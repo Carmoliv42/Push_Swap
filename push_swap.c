@@ -27,17 +27,40 @@ int    push_swap(int ac, char **av)
         temp = temp->next;
     }
     printf("\n");
-    i = 1;
+    /*i = 1;
     while (av[i])
     {
         printf("Argumento recebido: %s\n", av[i]);
         i++;
-    }
+    }*/
     return (0);
 }
 
 int main(int ac, char **av)
 {
-    push_swap(ac, av);
+    t_stack *stack_a;
+    t_stack *stack_b;
+    t_stack *temp;
+    int i;
+
+    stack_a = NULL;
+    stack_b = NULL;
+    i = 1;
+
+    if (!arg_validation (ac, av))
+        return (1);
+    while (av[i])
+    {
+        ps_lst_top(&stack_a, ps_lstnew(ft_atoi(av[i])));
+        i++;
+    }
+    ps_print_stack(stack_a, 'A');
+
+    temp = ps_lst_pop(&stack_a);
+    ps_lst_top(&stack_b, temp);
+
+    ps_print_stack(stack_a, 'A');
+    ps_print_stack(stack_b, 'B');
+
     return (0);
 }
