@@ -26,6 +26,7 @@ t_stack *ps_lstlast(t_stack *lst);
 void    ps_lst_top(t_stack **stack, t_stack *new_node);
 t_stack *ps_lst_pop(t_stack **stack);
 void    ps_print_stack(t_stack *stack, char name);
+int	ps_order(t_stack **stack);
 
 
 #endif
